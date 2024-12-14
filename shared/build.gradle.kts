@@ -21,8 +21,24 @@ kotlin {
     jvm()
     
     sourceSets {
-        commonMain.dependencies {
-            // put your Multiplatform dependencies here
+        commonMain {
+            //client
+            dependencies {
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.content.negotiation)
+                implementation(libs.ktor.client.auth)
+            }
+            //serialization
+            dependencies {
+                implementation(libs.ktor.serialization.kotlinx.json)
+            }
+            //logging
+            dependencies {
+                implementation(libs.logback)
+            }
+        }
+        commonTest.dependencies {
+            implementation(libs.ktor.client.mock)
         }
     }
 }
