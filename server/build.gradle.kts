@@ -21,16 +21,13 @@ dependencies {
     implementation(libs.ktor.server.websockets)
     implementation(libs.ktor.server.content.negotiation)
     implementation(libs.ktor.server.swagger)
+    implementation(libs.ktor.server.cors)
+    implementation(libs.ktor.server.default.headers)
 }
 
-//serialization
+//serialization - пока хз почему отдельно нужно добавить в зависимости сервера, а не только в shared 🤷
 dependencies {
     implementation(libs.ktor.serialization.kotlinx.json)
-}
-
-//logging
-dependencies {
-    implementation(libs.logback)
 }
 
 //test

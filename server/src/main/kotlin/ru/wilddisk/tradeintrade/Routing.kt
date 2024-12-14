@@ -12,6 +12,6 @@ fun Application.configureRouting() {
 
 fun Route.helloWorld() {
     get {
-        call.respondText("Hello World!")
+        call.respondText("Ktor: ${Greeting().greet()}")
     }
 }
